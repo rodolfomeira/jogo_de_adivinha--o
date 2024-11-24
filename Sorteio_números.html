@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+		<head>
+			<meta charset="utf-8">
+			<!--<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">-->
+			<title>Adivinhação</title>
+		
+		</head>
+		<body background="jogo.jpg" text="blue">
+		
+		 <marquee direction="up"><h1 align="center">Melhor melhor jogo do mundo
+		 </h1></marquee><br /><br /><br /><br /><br /><br />
+         <marquee direction="down"><h1 align="center" >F5 para jogar de novo !!!
+		 </h1></marquee><br /><br /><br /><br /><br /><br />
+					<script>
+							var num2 = Math.floor(Math.random() * 11), // numero sorteado
+								num=0;
+								tentativas=0; 
+								// num e numero informado, tentantivas é numero de tentativas
+								
+
+							function checaNumero() {
+							    //alert('Proceis que num quer jogar, o número é:'+num2)
+								num = prompt("Entre com o numero de 0 á 10 para tentar adivinhar");
+								
+								// Usuário cancelou o quiz
+								if(num == null) return false;
+								if(num < 0)
+								{
+								  alert('Não coloque números Negativos');
+									
+								}
+								
+								
+								
+								// Usuário não informou um número
+								if(parseInt(num).toString()=='NaN') {
+									alert('Digite um número válido');
+									checaNumero();
+									return false;
+								}
+								
+								tentativas=tentativas+1; // Incrementa as tentativas  tentativas++
+
+								if(parseInt(num) == num2){ // Acertou
+									alert("Parabéns você acertou em " + tentativas + " tentiva(s).");
+								}
+								else if(parseInt(num) < num2){ // Errou número menor
+									alert("Errou, tente um numero MAIOR.");
+									checaNumero();
+								}
+								else{ //Errou número maior
+									alert("Errou, tente um numero MENOR.");
+									checaNumero();
+								}   
+							}
+
+								checaNumero()
+					</script>
+		 
+	 
+		</body>
+		
+</html>
